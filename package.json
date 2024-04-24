@@ -1,0 +1,23 @@
+{
+  "name": "cypress_jaro2024",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tredgate/cypress_jaro2024.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tredgate/cypress_jaro2024/issues"
+  },
+  "homepage": "https://github.com/tredgate/cypress_jaro2024#readme",
+  "dependencies": {
+    "cypress": "^13.8.1"
+  }
+}
