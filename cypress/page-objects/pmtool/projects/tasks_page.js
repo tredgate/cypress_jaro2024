@@ -1,16 +1,9 @@
-import { LoginPage } from "./login_page";
-import { ProjectsPage } from "./projects_page";
+import { LoginPage } from "../login_page";
 
-export class HomePage {
+export class TasksPage {
   constructor() {
     this.profileButton = "#user_dropdown";
     this.logoutButton = "#logout";
-    this.projectsLink = "#Projects a";
-  }
-
-  clickProjects() {
-    cy.get(this.projectsLink).click();
-    return new ProjectsPage();
   }
 
   clickProfile() {
