@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tredgate/cypress_jaro2024#readme",
   "dependencies": {
+    "@cypress/xpath": "^2.0.3",
     "cypress": "^13.8.1"
   },
   "devDependencies": {
