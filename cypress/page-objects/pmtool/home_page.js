@@ -6,6 +6,8 @@ export class HomePage {
     this.profileButton = "#user_dropdown";
     this.logoutButton = "#logout";
     this.projectsLink = "#Projects a";
+    this.welcomePageHeader = "#welcome-page-header";
+    cy.get(this.welcomePageHeader).should("be.visible");
   }
 
   clickProjects() {
