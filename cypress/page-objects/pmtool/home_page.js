@@ -1,27 +1,9 @@
-import { LoginPage } from "./login_page";
-import { ProjectsPage } from "./projects_page";
+import { HeaderSection } from "./common/header_section";
 
-export class HomePage {
+export class HomePage extends HeaderSection {
   constructor() {
-    this.profileButton = "#user_dropdown";
-    this.logoutButton = "#logout";
-    this.projectsLink = "#Projects a";
+    super();
     this.welcomePageHeader = "#welcome-page-header";
     cy.get(this.welcomePageHeader).should("be.visible");
-  }
-
-  clickProjects() {
-    cy.get(this.projectsLink).click();
-    return new ProjectsPage();
-  }
-
-  clickProfile() {
-    cy.get(this.profileButton).click();
-    return this;
-  }
-
-  clickLogout() {
-    cy.get(this.logoutButton).click();
-    return new LoginPage();
   }
 }

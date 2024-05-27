@@ -1,3 +1,4 @@
+import { HeaderSection } from "./common/header_section";
 import { HomePage } from "./home_page";
 import { LostPasswordPage } from "./lost_password_page";
 
