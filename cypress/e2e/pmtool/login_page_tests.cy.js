@@ -4,7 +4,8 @@ describe("Login page tests", () => {
   beforeEach(() => {
     new LoginPage().openPmtool();
   });
-  it("Page header has text 'Login'", () => {
+
+  it("Page header have text 'Login'", () => {
     new LoginPage().pageHeaderHaveText("Login");
   });
 

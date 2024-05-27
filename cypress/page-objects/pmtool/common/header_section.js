@@ -1,7 +1,7 @@
-import { HeaderSection } from "../common/header_section";
 import { LoginPage } from "../login_page";
+import { MenuSection } from "./menu_section";
 
-export class TasksPage extends HeaderSection {
+export class HeaderSection extends MenuSection {
   constructor() {
     super();
     this.profileButton = "#user_dropdown";
