@@ -14,6 +14,15 @@ export class LoginPage {
     this.logoImg = ".login-page-logo img";
   }
 
+  usernameInputIsVisible() {
+    cy.get(this.usernameInput).should("be.visible");
+    return this;
+  }
+
+  usernameHaveValue(username) {
+    cy.get(this.usernameInput).type(username).should("have.value", username);
+  }
+
   usernameHavePlaceholder(placeholder) {
     cy.get(this.usernameInput).should("have.attr", "placeholder", placeholder);
   }
