@@ -26,7 +26,7 @@ describe("Login page tests", () => {
   });
 
   it("Forget password link have text 'Password forgotten?'", () => {
-    new LoginPage().passwordForgettenHaveText("Password forgotten?");
+    new LoginPage().passwordForgottenHaveText("Password forgotten?");
   });
 
   it("Logo is visible", () => {

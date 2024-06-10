@@ -3,8 +3,8 @@ import { CreateNewTaskModal } from "./create_new_task_modal";
 import { ProjectInfoPage } from "./project_info_page";
 
 export class TasksPage extends HeaderSection {
-  constructor() {
-    super();
+  constructor(projectId = "") {
+    super(`?module=items/items&path=21-${projectId}/22`);
     this.addTaskButton = '[test_id="Add Task"]';
     this.projectInfoAnchorXPath = '//a[text()="Project Info"]';
   }
