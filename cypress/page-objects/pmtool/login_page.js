@@ -1,81 +1,82 @@
-import { HeaderSection } from "./common/header_section";
+import { customElement } from "../../helpers/custom_element";
 import { HomePage } from "./home_page";
 import { LostPasswordPage } from "./lost_password_page";
 
 export class LoginPage {
   constructor() {
     this.url = "https://tredgate.com/pmtool";
-    this.usernameInput = "#username";
-    this.passwordInput = "#password";
-    this.rememberMeCheckbox = ".checkbox";
-    this.loginButton = "[type='submit']";
-    this.forgetPasswordButton = "#forget_password";
-    this.pageHeader = "h3.form-title";
-    this.logoImg = ".login-page-logo img";
+    this.usernameInput = customElement("#username");
+    this.passwordInput = customElement("#password");
+    this.rememberMeCheckbox = customElement(".checkbox");
+    this.loginButton = customElement("[type='submit']");
+    this.forgetPasswordButton = customElement("#forget_password");
+    this.pageHeader = customElement("h3.form-title");
+    this.logoImg = customElement(".login-page-logo img");
   }
 
   usernameInputIsVisible() {
-    cy.get(this.usernameInput).should("be.visible");
+    this.usernameInput.isVisible();
     return this;
   }
 
   usernameHaveValue(username) {
-    cy.get(this.usernameInput).type(username).should("have.value", username);
+    this.usernameInput.get().type(username);
+    this.usernameInput.haveValue(username);
     return this;
   }
 
   usernameHavePlaceholder(placeholder) {
-    cy.get(this.usernameInput).should("have.attr", "placeholder", placeholder);
+    this.usernameInput.havePlaceholder(placeholder);
     return this;
   }
 
   passwordHavePlaceholder(placeholder) {
-    cy.get(this.passwordInput).should("have.attr", "placeholder", placeholder);
+    this.passwordInput.havePlaceholder(placeholder);
     return this;
   }
 
   rememberMeIsVisible() {
-    cy.get(this.rememberMeCheckbox).should("be.visible");
+    this.rememberMeCheckbox.isVisible();
     return this;
   }
 
   rememberMeContainText(text) {
-    cy.get(this.rememberMeCheckbox).should("contain.text", text);
+    this.rememberMeCheckbox.containsText(text);
     return this;
   }
 
   loginButtonIsVisible() {
-    cy.get(this.loginButton).should("be.visible");
+    this.loginButton.isVisible();
     return this;
   }
 
   loginButtonHaveText(text) {
-    cy.get(this.loginButton).should("have.text", text);
+    this.loginButton.haveText(text);
     return this;
   }
 
   passwordForgottenHaveText(text) {
-    cy.get(this.forgetPasswordButton).should("have.text", text);
+    this.forgetPasswordButton.haveText(text);
     return this;
   }
 
   passwordForgottenIsVisible() {
-    cy.get(this.forgetPasswordButton).should("be.visible");
+    this.forgetPasswordButton.isVisible();
     return this;
   }
 
   logoIsVisible() {
-    cy.get(this.logoImg).should("be.visible");
+    this.logoImg.isVisible();
     return this;
   }
 
   pageHeaderIsvisible() {
-    cy.get(this.pageHeader).should("be.visible");
+    this.pageHeader.isVisible();
     return this;
   }
 
   pageHeaderHaveText(headerText) {
-    cy.get(this.pageHeader).should("have.text", headerText);
+    this.pageHeader.haveText(headerText);
     return this;
   }
 
@@ -85,32 +86,32 @@ export class LoginPage {
   }
 
   typeUsername(username) {
-    cy.get(this.usernameInput).type(username);
+    this.usernameInput.get().type(username);
     return this;
   }
 
   typePassword(password) {
-    cy.get(this.passwordInput).type(password);
+    this.passwordInput.get().type(password);
     return this;
   }
 
   passwordIsVisible() {
-    cy.get(this.passwordInput).should("be.visible");
+    this.passwordInput.isVisible();
     return this;
   }
 
   passwordHavePlaceholder(placeholder) {
-    cy.get(this.passwordInput).should("have.attr", "placeholder", placeholder);
+    this.passwordInput.havePlaceholder(placeholder);
     return this;
   }
 
   clickLogin() {
-    cy.get(this.loginButton).click();
+    this.loginButton.get().click();
     return new HomePage();
   }
 
   clickPasswordForgotten() {
-    cy.get(this.forgetPasswordButton).click();
+    this.forgetPasswordButton.get().click();
     return new LostPasswordPage();
   }
 }
