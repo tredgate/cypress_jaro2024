@@ -9,6 +9,7 @@ export class ProjectInfoPage extends HeaderSection {
     this.dateAddedTdXPath = '//th[text()="Date Added"]/../td';
     this.createdBySpanXPath = '//th[text()="Created By"]/..//span';
     this.statusDivXpath = '//th[text()="Status"]/..//div';
+    this.priorityDivXpath = '//th[text()="Priority"]/..//div';
   }
 
   projectNameHaveText(projectName) {
@@ -33,6 +34,11 @@ export class ProjectInfoPage extends HeaderSection {
 
   statusHaveText(status) {
     cy.xpath(this.statusDivXpath).should("have.text", status);
+    return this;
+  }
+
+  priorityHaveText(priority) {
+    cy.xpath(this.priorityDivXpath).should("have.text", priority);
     return this;
   }
 }
